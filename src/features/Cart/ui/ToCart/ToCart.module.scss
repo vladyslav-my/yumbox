@@ -1,0 +1,16 @@
+.ToCart {
+	align-items: center;
+	column-gap: rem(8);
+	
+	&__bold {
+		font-weight: 600;
+	}
+
+	&__text {
+		font-size: rem(16);
+	}
+
+	&__icon {
+		flex: 0 0 auto;
+	}
+}

@@ -1,0 +1,12 @@
+.Overlay {
+	position: fixed;
+	z-index: $overlayZindex;
+	top: 0;
+	right: 0;
+
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(10px);
+
+	background: rgba(252, 184, 82, 0.11);
+}

@@ -1,0 +1,43 @@
+.AddToCart {
+	$p: &;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	height: rem(67);
+
+	// padding: rem(25) rem(39) rem(24) rem(43);
+
+	transition: border $primaryTransition;
+
+	text-align: center;
+
+	border: rem(2) solid transparent;
+	border-radius: rem(63);
+
+	&__price {
+		font-size: rem(18);
+		font-weight: 600;
+	}
+
+	&__add {
+		display: none;
+
+		font-size: rem(16);
+		font-weight: 500;
+	}
+
+	&:hover {
+		border: rem(2) solid #fff;
+		#{$p} {
+			&__add {
+				display: block;
+			}
+
+			&__price {
+				display: none;
+			}
+		}
+		
+	}
+}

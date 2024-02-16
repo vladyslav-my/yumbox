@@ -1,0 +1,55 @@
+.Nav {
+	$p: &;
+
+	&__item {
+		font-weight: 500;
+	}
+
+	&__link {
+		transition: color $primaryTransition;
+
+		color: #fff;
+
+		&:hover {
+			color: $lightPurpleColor;
+		}
+	}
+
+	&_mobile {
+		#{$p} {
+			&__link {
+
+			}
+		
+			&__item {
+			}
+		
+			&__list {
+				display: flex;
+				flex-direction: column;
+
+				font-size: rem(24);
+				row-gap: rem(12);
+			}
+		}
+	}
+
+	&_desktop {
+		#{$p} {
+			&__link {
+
+			}
+		
+			&__item {
+				font-size: rem(15);
+				
+			}
+		
+			&__list {
+				display: inline-flex;
+				flex-wrap: wrap;
+				column-gap: rem(40);
+			}
+		}
+	}
+}

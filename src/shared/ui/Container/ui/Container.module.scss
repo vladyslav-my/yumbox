@@ -1,0 +1,11 @@
+.Container {
+	box-sizing: content-box;
+   
+   margin: 0 auto;
+	padding: 0 rem($containerPadding);
+
+
+	&_default {
+		max-width: rem($maxContainerWidth);
+	}
+}

@@ -1,0 +1,55 @@
+.ProductItem {
+	display: grid;
+
+	&__article {
+		display: grid;
+	}
+
+	&__image {
+		// max-width: rem(296.35);
+		width: 100%;
+
+		margin-bottom: rem(18);
+
+		border-radius: rem(12.36);
+		aspect-ratio: 296.35 / 295;
+		object-fit: cover;
+	}
+
+	&__title {
+		display: grid;
+		
+		margin-bottom: rem(24);
+
+		text-align: center;
+
+		font-size: rem(24);
+		font-weight: 600;
+		justify-self: center;
+	}
+
+	&__name {
+
+	}
+
+	&__setNumber {
+		
+	}
+
+
+	&__weight {
+		margin-bottom: rem(22);
+
+		color: #7a7a7a;
+
+		font-size: rem(13);
+		font-weight: 500;
+		justify-self: center;
+	}
+
+	&__button {
+		width: 100%;
+	}
+
+
+}

@@ -1,0 +1,38 @@
+.Counter {
+	display: inline-flex;
+	align-items: center;
+
+	width: rem(98.79);
+
+	height: rem(32.44);
+
+	border: rem(1) solid #fff;
+
+	border-radius: rem(22.8);
+
+	column-gap: rem(2);
+
+	&__minus, &__plus {
+		display: flex;
+		align-items: center;
+
+		height: 100%;
+	}
+
+	&__minus {
+		padding-left: rem(11.72);
+	}
+
+	&__plus {
+		padding-right: rem(11.72);
+	}
+
+	&__count {
+		flex: 1 1 auto;
+
+		text-align: center;
+
+		font-size: rem(14);
+		font-weight: 600;
+	}
+}

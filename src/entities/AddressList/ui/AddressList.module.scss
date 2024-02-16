@@ -1,0 +1,17 @@
+.AddressList {
+
+	&__this {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(10);
+	
+	}
+
+	&__link {
+		font-size: rem(18);
+		font-weight: 600;
+		&_orange {
+			color: #F3BA4F;
+		}
+	}
+}

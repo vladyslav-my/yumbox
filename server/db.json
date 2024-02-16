@@ -1,0 +1,47 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "src": "https://st2.depositphotos.com/1000604/7802/i/450/depositphotos_78027540-stock-photo-sushi-rolls.jpg",
+      "alt": "sushi",
+      "price": "555",
+      "weight": "1500",
+      "name": "YumBox",
+      "setNumber": "21"
+    },
+    {
+      "id": 2,
+      "src": "https://st2.depositphotos.com/1000604/7802/i/450/depositphotos_78027540-stock-photo-sushi-rolls.jpg",
+      "alt": "sushi",
+      "price": "555",
+      "weight": "1500",
+      "name": "YumBox",
+      "setNumber": "21"
+    },
+    {
+      "id": 3,
+      "src": "https://st2.depositphotos.com/1000604/7802/i/450/depositphotos_78027540-stock-photo-sushi-rolls.jpg",
+      "alt": "sushi",
+      "price": "9999",
+      "weight": "1500",
+      "name": "YumBox",
+      "setNumber": "21"
+    },
+    {
+      "id": 4,
+      "src": "https://st2.depositphotos.com/1000604/7802/i/450/depositphotos_78027540-stock-photo-sushi-rolls.jpg",
+      "alt": "sushi",
+      "price": "555",
+      "weight": "1500",
+      "name": "YumBox",
+      "setNumber": "21"
+    }
+  ],
+  "carts": [
+    {
+      "count": 1,
+      "productId": 2,
+      "id": 1
+    }
+  ]
+}

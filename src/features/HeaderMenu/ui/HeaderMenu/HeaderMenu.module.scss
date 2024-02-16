@@ -1,0 +1,35 @@
+.HeaderMenu {
+	position: fixed;
+	z-index: $headerMenuZIndex;
+	top: 0;
+	right: -100%;
+
+	width: min(100%, rem(468));
+	height: 100%;
+	padding: rem(58.87 + 84.98) rem(20) rem(20) rem(66);
+
+	transition: right $primaryTransition;
+
+	background-color: #000;
+
+	&_open {
+		right: 0;
+	}
+
+	&__viewCart {
+		margin-bottom: rem(42);
+	}
+
+	&__nav {
+		margin-bottom: rem(40);
+
+	}
+
+	&__addressList {
+		margin-bottom: rem(40);
+	}
+
+	&__socialNetworkList {
+		margin-bottom: rem(74);
+	}
+}

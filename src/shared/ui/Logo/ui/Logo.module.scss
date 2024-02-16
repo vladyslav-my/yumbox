@@ -1,0 +1,17 @@
+.Logo {
+	$p: &;
+
+	@media (max-width: em($tablet)) {
+		&__icon {
+			width: rem(75);
+			height: rem(48.13);
+		}
+	}
+
+	@media (min-width: em($tablet)) {
+		&__icon {
+			width: rem(114.08);
+			height: rem(72.41);
+		}
+	}
+}

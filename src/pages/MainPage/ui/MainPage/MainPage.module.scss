@@ -1,0 +1,8 @@
+.MainPage {
+	&__viewCart {
+		position: fixed;
+		z-index: $viewCartZIndex;
+		right: rem(20);
+		bottom: rem(60);
+	}
+}

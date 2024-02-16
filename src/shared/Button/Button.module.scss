@@ -1,0 +1,17 @@
+.Button {
+	display: inline-flex;
+	justify-content: center;
+
+	height: rem(67);
+
+	padding: 0 rem(39) 0 rem(43);
+
+	text-align: center;
+
+	border: 2px solid #fff;
+
+	border-radius: rem(63);
+
+	font-size: rem(16);
+	font-weight: 500;
+}

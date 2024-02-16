@@ -1,0 +1,37 @@
+//* Vars
+$layoutColor: #000;
+
+$primaryTextColor: #fff;
+
+$accentColor: #D03664;
+$accentHoverColor: #AA2B51;
+$lightPurpleColor: #FFEAF1;
+$discountColor: #F99C11;
+$greyColor: #585858;
+$lightgreyColor: #C7C7C7;
+$morelightgrayColor: #E1E1E1;
+$redColor: #D71515;
+$primaryTransition: 0.3s ease;
+$secondaryTransition: 0.2s ease;
+
+$zIndexBurgerMenuButton: 500;
+$overlayZindex: 400;
+$cartMenuZIndex: 600;
+$headerMenuZIndex: 450;
+$headerZIndex: 800;
+$viewCartZIndex: 350;
+$headerViewCartZIndex: 900;
+
+//** Fonts by default:
+$fontFamily: "Montserrat"; //? name
+$fontSize: 16; 
+$fontColor: $primaryTextColor; //? color
+
+$minWidth: 320; //? min width of layout
+$containerPadding: 20; //? padding for container
+$maxContainerWidth: 1276; //? width container
+
+//** Break-points:
+$tablet: 991.98;
+$mobile: 767.98;
+$smallMobile: 479.98;

@@ -1,0 +1,21 @@
+.ProductsSection {
+	&__title {
+		display: flex;
+		justify-content: center;
+
+		margin-bottom: rem(75);
+
+		font-size: rem(20);
+		font-weight: 500;
+	}
+
+	&__container {
+
+	}
+
+	&__list {
+		display: grid;
+		gap: rem(30.65) rem(48.87);
+		grid-template-columns: repeat(auto-fit, minmax(em(250), 1fr));
+	}
+}

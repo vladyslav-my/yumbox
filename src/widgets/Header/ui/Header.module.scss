@@ -1,0 +1,26 @@
+.Header {
+	position: relative;
+	z-index: $headerZIndex;
+
+	background-color: #000;
+
+	&__viewCart {
+
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	@media (min-width: em($tablet)) {
+		padding-top: rem(35);
+		padding-bottom: rem(19.36);
+	}
+
+	@media (max-width: em($tablet)) {
+		padding-top: rem(20);
+		padding-bottom: rem(13.87);
+	}
+}

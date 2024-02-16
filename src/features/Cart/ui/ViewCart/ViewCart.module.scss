@@ -1,0 +1,26 @@
+.ViewCart {
+	display: inline-flex;
+	align-items: center;
+
+	padding: rem(4) 0;
+	padding-right: rem(17);
+	padding-left: rem(5);
+
+	border: 1px solid #fff;
+
+	border-radius: rem(21);
+	background-color: #000;
+	column-gap: rem(11);
+
+	&__count {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: rem(19);
+		height: rem(19);
+
+		border-radius: 50%;
+		background-color: #D71515;
+	}
+}
