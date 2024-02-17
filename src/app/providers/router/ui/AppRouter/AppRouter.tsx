@@ -2,7 +2,6 @@ import { Suspense, useMemo } from "react";
 import { Route, Routes } from "react-router-dom";
 import { PageLoader } from "@/shared/ui/PageLoader";
 import { AppRouteProps, routes } from "../../routes/routes";
-import { RequireAuth } from "../RequireAuth";
 
 const AppRouter = ({ className }: { className?: string }) => {
 	const RouteItems = useMemo(() => {

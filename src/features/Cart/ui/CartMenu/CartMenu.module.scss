@@ -90,6 +90,12 @@
 
 	}
 
+	&__text {
+		@media (max-width: em(375)) {
+			display: none;
+		}
+	}
+
 	&__button {
 		display: flex;
 		align-items: center;

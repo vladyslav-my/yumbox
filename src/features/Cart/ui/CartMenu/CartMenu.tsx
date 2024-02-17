@@ -162,7 +162,7 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 					</div>
 
 					<button onClick={onClickOrder} className={cls.Delivery__button}>
-						оформити за <span className={cls.Delivery__totalPrice}>{cartTotalPrice.total} ₴</span>
+						<span className={cls.Delivery__text}>оформити за </span> <span className={cls.Delivery__totalPrice}>{cartTotalPrice.total} ₴</span>
 						{isDiscount && <span className={cls.Delivery__discountPrice}> {cartTotalPrice.discount} ₴</span>}
 					</button>
 				</div>

@@ -21,8 +21,8 @@ export const Carrousel: FC<CarrouselProps> = memo(({
 	const listRef = useRef<HTMLUListElement>(null);
 	const [maxIndexItem, setMaxIndexItem] = useState(0);
 	const [currentIndexItem, setCurrentIndexItem] = useState(0);
-	const [isShowLeftButton, setIsShowLeftButton] = useState(true);
-	const [isShowRightButton, setIsShowRightButton] = useState(true);
+	const [isShowLeftButton, setIsShowLeftButton] = useState(false);
+	const [isShowRightButton, setIsShowRightButton] = useState(false);
 	const isTablet = useMediaQuery({ maxWidth: Devices.TABLET });
 
 	useEffect(() => {
