@@ -1,0 +1,25 @@
+::-webkit-scrollbar {
+	width: rem(12); 
+  }
+
+::-webkit-scrollbar-thumb { 
+		border-radius: rem(6);
+		background-color: #808080;
+}
+
+::-webkit-scrollbar-track {
+		border-radius: rem(6);
+		background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar-horizontal {
+		height: rem(12);
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+		background-color: #808080;
+}
+
+::-webkit-scrollbar-track:horizontal {
+		background-color: #f0f0f0;
+}

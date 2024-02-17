@@ -17,7 +17,7 @@ export const navModel = [
 		name: "Про нас",
 	},
 	{
-		id: 3,
+		id: 4,
 		to: getMainRoutePath(),
 		name: "Контакти",
 	},

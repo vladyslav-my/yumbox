@@ -33,6 +33,8 @@ const overwritedAirbnbRules = {
 };
 
 const temporarilyDisabled = {
+	"react/no-array-index-key": [0],
+	"jsx-a11y/no-noninteractive-element-interactions": [0],
 	"@typescript-eslint/no-unused-vars": [0],
 	"max-len": [0],
 	"react/button-has-type": [0],

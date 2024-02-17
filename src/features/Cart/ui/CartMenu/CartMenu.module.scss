@@ -45,11 +45,12 @@
 		display: flex;
 
 		overflow: auto;
+
 		flex-direction: column;
 
 		height: 100%;
 
-		row-gap: rem(8)
+		row-gap: rem(8);
 	}
 
 	&_open {
@@ -128,3 +129,6 @@
 		font-size: rem(20)
 	}
 }
+
+
+

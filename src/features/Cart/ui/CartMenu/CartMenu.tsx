@@ -98,6 +98,10 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 		dispatch(cartFeatureActions.setIsOpen(false));
 	}, [dispatch]);
 
+	const onClickOrder = useCallback(() => {
+		console.log(data);
+	}, [data]);
+
 	const cartsItems = useMemo(() => {
 		return data.map(({
 			id, count, product: {
@@ -157,7 +161,7 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 						<span className={cls.Delivery__price}>50 ₴</span>
 					</div>
 
-					<button className={cls.Delivery__button}>
+					<button onClick={onClickOrder} className={cls.Delivery__button}>
 						оформити за <span className={cls.Delivery__totalPrice}>{cartTotalPrice.total} ₴</span>
 						{isDiscount && <span className={cls.Delivery__discountPrice}> {cartTotalPrice.discount} ₴</span>}
 					</button>

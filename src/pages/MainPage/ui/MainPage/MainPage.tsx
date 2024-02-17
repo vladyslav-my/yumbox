@@ -4,6 +4,7 @@ import { Header } from "@/widgets/Header";
 import { ViewCart } from "@/features/Cart";
 import { Devices } from "@/shared/const/common";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
+import { CarrouselSection } from "../CarrouselSection/CarrouselSection";
 import { ProductsSection } from "../ProductsSection/ProductsSection";
 import cls from "./MainPage.module.scss";
 
@@ -16,6 +17,7 @@ export const MainPage: FC<MainPageProps> = ({ className }) => {
 	return (
 		<div className={cn(cls.MainPage, {}, [className])}>
 			<Header />
+			<CarrouselSection className={cls.MainPage__carrouselSection} />
 			<ProductsSection />
 			{isTablet && <ViewCart className={cls.MainPage__viewCart} />}
 		</div>
