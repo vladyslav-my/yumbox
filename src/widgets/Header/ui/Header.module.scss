@@ -8,6 +8,14 @@
 
 	}
 
+	&__logo {
+		
+
+		@media (min-width: em($tablet)) {
+			margin-left: rem(27.07);
+		}
+	}
+
 	&__container {
 		display: flex;
 		align-items: center;

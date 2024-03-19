@@ -25,7 +25,7 @@ export const ProductsSection: FC<ProductsSectionProps> = memo(({ className }) =>
 	useEffect(() => {
 		// @ts-ignore
 		dispatch(productActions.fetchProduct());
-	}, []);
+	}, [dispatch]);
 
 	const productsItem = useMemo(() => {
 		return productData.map(({

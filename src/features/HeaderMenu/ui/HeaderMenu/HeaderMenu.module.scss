@@ -6,7 +6,13 @@
 
 	width: min(100%, rem(468));
 	height: 100%;
-	padding: rem(58.87 + 84.98) rem(20) rem(20) rem(66);
+
+	// padding: rem(58.87 + 84.98) rem(20) rem(20) rem(66);
+	padding-top: rem(82);
+	padding-right: rem(20);
+	padding-bottom: rem(20);
+	padding-left: rem(64);
+
 
 	transition: right $primaryTransition;
 
@@ -17,7 +23,8 @@
 	}
 
 	&__viewCart {
-		margin-bottom: rem(42);
+		margin-top: rem(45);
+		margin-bottom: rem(37);
 	}
 
 	&__nav {
@@ -31,5 +38,14 @@
 
 	&__socialNetworkList {
 		margin-bottom: rem(74);
+	}
+
+	&__scrollContainer {
+		overflow-y: auto;
+
+		height: 100%;
+
+		scrollbar-width: thin; /* Толщина полосы: thin, auto или none */
+		scrollbar-color: #888888 #f0f0f0; /* Цвет полосы и фона */
 	}
 }

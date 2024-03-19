@@ -2,9 +2,11 @@ import {
 	FC, memo, useCallback, useMemo,
 } from "react";
 import { useSelector } from "react-redux";
+import { headerMenuActions } from "@/features/HeaderMenu";
 import { cartEntitySelectors } from "@/entities/Cart";
 import { classNames as cn } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { numberWithSpaces } from "@/shared/lib/numberWithSpaces/numberWithSpaces";
 import { cartFeatureActions, cartFeatureSelectors } from "../../model/slice/cartFeatureSlice";
 import cls from "./ViewCart.module.scss";
 
@@ -26,12 +28,16 @@ export const ViewCart: FC<ViewCartProps> = memo(({ className }) => {
 	const dispatch = useAppDispatch();
 	const onClick = useCallback(() => {
 		dispatch(cartFeatureActions.setIsOpen(!isOpen));
+
+		if (!isOpen) {
+			dispatch(headerMenuActions.setIsOpen(false));
+		}
 	}, [dispatch, isOpen]);
 
 	return (
 		<button onClick={onClick} className={cn(cls.ViewCart, {}, [className])}>
 			<span className={cls.ViewCart__count}>{cartStats.count}</span>
-			<span className={cls.ViewCart__price}>{cartStats.total}</span>
+			<span className={cls.ViewCart__price}>{numberWithSpaces(cartStats.total)} грн</span>
 		</button>
 	);
 });

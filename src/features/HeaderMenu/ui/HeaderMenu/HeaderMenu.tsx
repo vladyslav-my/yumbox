@@ -29,10 +29,13 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ className }) => {
 				[cls.HeaderMenu_open]: isOpen,
 			}, [className])}
 			>
-				<ViewCart className={cls.HeaderMenu__viewCart} />
-				<Nav className={cls.HeaderMenu__nav} modifier={NavModifier.MOBILE} />
-				<AddressList className={cls.HeaderMenu__addressList} />
-				<SocialNetworkList className={cls.HeaderMenu__socialNetworkList} />
+				<div className={cls.HeaderMenu__scrollContainer}>
+					<ViewCart className={cls.HeaderMenu__viewCart} />
+					<Nav className={cls.HeaderMenu__nav} modifier={NavModifier.MOBILE} />
+					<AddressList className={cls.HeaderMenu__addressList} />
+					<SocialNetworkList className={cls.HeaderMenu__socialNetworkList} />
+				</div>
+
 			</div>
 			{isOpen && <Overlay onClick={onClickClose} />}
 		</Portal>

@@ -13,6 +13,7 @@ import { useDebounce } from "@/shared/lib/hooks/useDebaunce/useDebaunce";
 import { Overlay } from "@/shared/ui/Overlay";
 import { PageLoader } from "@/shared/ui/PageLoader";
 import { Portal } from "@/shared/ui/Portal";
+import AddIcon from "../../assets/add.svg";
 import { cartFeatureActions, cartFeatureSelectors } from "../../model/slice/cartFeatureSlice";
 import cls from "./CartMenu.module.scss";
 
@@ -127,7 +128,7 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 	}, [data, onClickCount, onClickRemove]);
 
 	const headerHeight = useMemo(() => {
-		return isTablet ? 84.98 : 129.77;
+		return isTablet ? 84.98 : 129.77 + 21;
 	}, [isTablet]);
 
 	return (
@@ -140,7 +141,9 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 			>
 				<div className={cls.CartMenu__top}>
 					<h2 className={cls.CartMenu__title}>Корзина</h2>
-					<button onClick={onClickClose} className={cls.CartMenu__close}>+</button>
+					<button onClick={onClickClose} className={cls.CartMenu__close}>
+						<AddIcon className={cls.CartMenu__closeIcon} />
+					</button>
 				</div>
 				<ul className={cls.CartMenu__list}>
 					{isLoading && !data ? <PageLoader /> : cartsItems}

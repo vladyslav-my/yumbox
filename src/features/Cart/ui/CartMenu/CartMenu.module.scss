@@ -27,7 +27,7 @@
 	}
 
 	&__close {
-		transform: rotate(45deg);
+		display: inline-flex;
 
 		font-size: rem(45);
 		&:hover {
@@ -39,6 +39,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		margin-bottom: rem(25);
 	}
 
 	&__list {
@@ -63,6 +65,14 @@
 		bottom: 0;
 
 		width: 100%;
+	}
+
+	&__closeIcon {
+		fill: $whiteColor;
+
+		width: rem(17.86);
+		height: rem(17.86);
+
 	}
 }
 
@@ -134,6 +144,9 @@
 	&__totalPrice, &__discountPrice {
 		font-size: rem(20)
 	}
+
+
+
 }
 
 
