@@ -128,7 +128,7 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 	}, [data, onClickCount, onClickRemove]);
 
 	const headerHeight = useMemo(() => {
-		return isTablet ? 84.98 : 129.77 + 21;
+		return isTablet ? 84.98 : 129.77 + 29;
 	}, [isTablet]);
 
 	return (

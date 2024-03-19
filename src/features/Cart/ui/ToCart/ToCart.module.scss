@@ -1,16 +1,21 @@
 .ToCart {
 	align-items: center;
-	column-gap: rem(4);
+	column-gap: rem(13);
+
+	transition: border $primaryTransition;
 	
 	&__bold {
 		font-weight: 700;
 	}
 
 	&__text {
-		font-size: rem(16);
+		font-size: rem(15);
 	}
 
 	&__icon {
 		flex: 0 0 auto;
+	}
+	&:hover {
+		border: rem(2) solid #52FC96;
 	}
 }

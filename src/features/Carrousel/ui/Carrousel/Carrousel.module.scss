@@ -112,22 +112,45 @@ $productZIndex: 25;
 		display: inline-flex;
 
 		align-items: center;
-		column-gap: rem(10);
+		column-gap: rem(7);
 	}
 
 	&__dotItem {
-		width: rem(9);
-		height: rem(9);
+		display: inline-flex;
+	}
 
-		transition:
-			background-color $primaryTransition;
+	&__dotButton {
+		position: relative;
 
-		border-radius: 50%;
+		width: rem(12);
+		height: rem(12);
 
-		background-color: #666;
+
+
+		
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			width: rem(9);
+			height: rem(9);
+
+			content: "";
+			transition: opacity $primaryTransition;
+
+			transform: translate(-50%, -50%);
+
+			opacity: 0.4;
+
+			border-radius: 50%;
+			background-color: #fff;
+		}
 
 		&_active {
-			background-color: #fff;
+			&::before {
+				opacity: 1;
+			}
 		}
 	}
 

@@ -40,7 +40,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		margin-bottom: rem(25);
+		margin-bottom: rem(26);
 	}
 
 	&__list {
@@ -79,7 +79,8 @@
 .Delivery {
 	$p: &;
 
-	padding: rem(30) rem(28) rem(26.54) rem(30.29);
+	// padding: rem(30) rem(28) rem(26.54) rem(30.29);
+	padding: rem(22) rem(28) rem(26.54) rem(29);
 
 	border-top-left-radius: rem(31);
 	border-top-right-radius: rem(31);
@@ -89,6 +90,8 @@
 	font-weight: 600;
 
 	&__title {
+		align-self: end;
+
 		font-size: rem(18);
 	}
 
@@ -109,7 +112,6 @@
 	&__button {
 		display: flex;
 		align-items: center;
-		column-gap: rem(4);
 
 		justify-content: center;
 
@@ -121,6 +123,9 @@
 
 		border-radius: rem(63);
 		background-color: #FCB852;
+
+		line-height: 100%;
+		column-gap: rem(4);
 		&:hover {
 			background-color: #f0ba6a;
 		}
@@ -128,9 +133,10 @@
 
 	&__titleBox {
 		display: flex;
+		// align-items: center;
 		justify-content: space-between;
 
-		margin-bottom: rem(26.59);
+		margin-bottom: rem(26);
 	}
 
 	&_discount {

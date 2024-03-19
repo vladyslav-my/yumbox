@@ -73,11 +73,17 @@ export const Carrousel: FC<CarrouselProps> = memo(({
 			return (
 				<li
 					key={i}
-					className={cn(cls.Carrousel__dotItem, {
-						[cls.Carrousel__dotItem_active]: i === currentIndexItem,
-					})}
-					onClick={onClickDotHandler(i)}
-				/>
+					className={cls.Carrousel__dotItem}
+
+				>
+					<button
+						aria-label="dot"
+						className={cn(cls.Carrousel__dotButton, {
+							[cls.Carrousel__dotButton_active]: i === currentIndexItem,
+						})}
+						onClick={onClickDotHandler(i)}
+					/>
+				</li>
 			);
 		}, []);
 	}, [currentIndexItem, maxIndexItem, onClickDotHandler]);
