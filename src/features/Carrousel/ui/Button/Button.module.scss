@@ -2,6 +2,8 @@
 	$p: &;
 
 	display: flex;
+
+	transition: color $primaryTransition;
 	&_right {
 		#{$p} {
 			&__icon {
@@ -11,12 +13,10 @@
 	}
 
 	&:hover {
-		color: $lightPurpleColor;
+		color: $discountColor;
 	}
 
 	&__icon {
 		flex: 0 0 auto;
-
-		color: #fff;
 	}
 }

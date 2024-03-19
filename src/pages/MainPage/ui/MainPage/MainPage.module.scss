@@ -9,4 +9,13 @@
 	&__carrouselSection {
 		margin-bottom: rem(64);
 	}
+
+
+	@media (min-width: em($tablet)) {
+		padding-top: rem(126.77);
+	}
+
+	@media (max-width: em($tablet)) {
+		padding-top: rem(84.98);
+	}
 }

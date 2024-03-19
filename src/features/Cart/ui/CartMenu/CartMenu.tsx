@@ -3,6 +3,7 @@ import {
 } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {
 	cartEntityActions, cartEntitySelectors, CartItem,
 } from "@/entities/Cart";
@@ -31,7 +32,7 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 	const data = useSelector(cartEntitySelectors.data);
 	const isLoading = useSelector(cartEntitySelectors.isLoading);
 	const isError = useSelector(cartEntitySelectors.isError);
-	const [scrollPosition, setScrollPosition] = useState(0);
+	// const [scrollPosition, setScrollPosition] = useState(0);
 
 	const onClickCloseMenu = useCallback(() => {
 		dispatch(cartFeatureActions.setIsOpen(false));
@@ -44,7 +45,8 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			setScrollPosition(window.scrollY);
+			// setScrollPosition(window.scrollY);
+			console.log(window.scrollY);
 		};
 
 		window.addEventListener("scroll", handleScroll);
@@ -65,6 +67,20 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 			document.body.style.overflow = "auto";
 		};
 	}, [isOpen]);
+
+	useEffect(() => {
+		const onKeydown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") {
+				dispatch(cartFeatureActions.setIsOpen(false));
+			}
+		};
+
+		window.addEventListener("keydown", onKeydown);
+
+		return () => {
+			window.removeEventListener("keydown", onKeydown);
+		};
+	}, [dispatch]);
 
 	const getIndexCartItemById = useCallback((id: number) => {
 		return data.findIndex((cartItem) => cartItem.id === id);
@@ -110,31 +126,38 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 			},
 		}) => {
 			return (
-				<CartItem
+				<CSSTransition
 					key={id}
-					src={src}
-					alt={alt}
-					name={name}
-					price={price}
-					setNumber={setNumber}
-					weight={weight}
-					onClickRemove={onClickRemove(id)}
-					onClickMinus={onClickCount({ id, count: -1 })}
-					onClickPlus={onClickCount({ id, count: 1 })}
-					count={count}
-				/>
+					timeout={500}
+					classNames="item"
+				>
+					<CartItem
+						key={id}
+						src={src}
+						alt={alt}
+						name={name}
+						price={price}
+						setNumber={setNumber}
+						weight={weight}
+						onClickRemove={onClickRemove(id)}
+						onClickMinus={onClickCount({ id, count: -1 })}
+						onClickPlus={onClickCount({ id, count: 1 })}
+						count={count}
+					/>
+				</CSSTransition>
+
 			);
 		});
 	}, [data, onClickCount, onClickRemove]);
 
-	const headerHeight = useMemo(() => {
-		return isTablet ? 84.98 : 129.77 + 29;
-	}, [isTablet]);
+	// const headerHeight = useMemo(() => {
+	// 	return isTablet ? 84.98 + 29 : 129.77 + 29;
+	// }, [isTablet]);
 
 	return (
 		<Portal>
 			<aside
-				style={{ paddingTop: `${Math.max(33, headerHeight - scrollPosition)}px` }}
+				// style={{ paddingTop: `${Math.max(33, headerHeight - scrollPosition)}px` }}
 				className={cn(cls.CartMenu, {
 					[cls.CartMenu_open]: isOpen,
 				}, [className])}
@@ -145,16 +168,21 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 						<AddIcon className={cls.CartMenu__closeIcon} />
 					</button>
 				</div>
-				<ul className={cls.CartMenu__list}>
+				<TransitionGroup role="list" className={cls.CartMenu__list}>
 					{isLoading && !data ? <PageLoader /> : cartsItems}
 					{!data.length && (
-						<li style={{
-							display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%",
-						}}
-						>Немає товарів у кошику
-						</li>
-					) }
-				</ul>
+						<CSSTransition
+							timeout={500}
+							classNames="item"
+						>
+							<li className={cls.CartMenu__empty}>
+								Немає товарів у кошику
+							</li>
+						</CSSTransition>
+					)}
+
+				</TransitionGroup>
+
 				<div className={cn(cls.Delivery, {
 					[cls.Delivery_discount]: isDiscount,
 				}, [cls.CartMenu__delivery])}
@@ -169,7 +197,7 @@ export const CartMenu: FC<CartMenuProps> = memo(({ className }) => {
 						{isDiscount && <span className={cls.Delivery__discountPrice}> {cartTotalPrice.discount} ₴</span>}
 					</button>
 				</div>
-				{isOpen && <Overlay onClick={onClickCloseMenu} />}
+				<Overlay onClick={onClickCloseMenu} isActive={isOpen} />
 			</aside>
 		</Portal>
 

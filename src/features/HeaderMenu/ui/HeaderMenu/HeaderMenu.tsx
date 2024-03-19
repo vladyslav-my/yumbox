@@ -1,4 +1,4 @@
-import { FC, useCallback } from "react";
+import { FC, useCallback, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { ViewCart } from "@/features/Cart";
 import { AddressList } from "@/entities/AddressList";
@@ -23,6 +23,20 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ className }) => {
 		dispatch(headerMenuActions.setIsOpen(false));
 	}, [dispatch]);
 
+	useEffect(() => {
+		const onKeydown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") {
+				dispatch(headerMenuActions.setIsOpen(false));
+			}
+		};
+
+		window.addEventListener("keydown", onKeydown);
+
+		return () => {
+			window.removeEventListener("keydown", onKeydown);
+		};
+	}, [dispatch]);
+
 	return (
 		<Portal>
 			<div className={cn(cls.HeaderMenu, {
@@ -37,7 +51,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({ className }) => {
 				</div>
 
 			</div>
-			{isOpen && <Overlay onClick={onClickClose} />}
+			<Overlay onClick={onClickClose} isActive={isOpen} />
 		</Portal>
 	);
 };

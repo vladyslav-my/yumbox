@@ -113,3 +113,20 @@ h6 {
 #root {
 	height: 100vh;
 }
+
+.item-enter {
+	opacity: 0;
+ }
+ .item-enter-active {
+	transition: opacity 500ms ease-in;
+
+	opacity: 1;
+ }
+ .item-exit {
+	opacity: 1;
+ }
+ .item-exit-active {
+	transition: opacity 500ms ease-in;
+
+	opacity: 0;
+ }

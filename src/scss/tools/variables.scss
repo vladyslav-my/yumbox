@@ -7,7 +7,6 @@ $primaryTextColor: #fff;
 $whiteColor: #fff;
 $accentColor: #D03664;
 $accentHoverColor: #AA2B51;
-$lightPurpleColor: #FFEAF1;
 $discountColor: #F99C11;
 $greyColor: #585858;
 $lightgreyColor: #C7C7C7;
@@ -34,6 +33,7 @@ $containerPadding: 20; //? padding for container
 $maxContainerWidth: 1276; //? width container
 
 //** Break-points:
+$pc: $maxContainerWidth + ($containerPadding * 2);
 $tablet: 991.98;
 $mobile: 767.98;
 $smallMobile: 479.98;

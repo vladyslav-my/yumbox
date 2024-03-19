@@ -4,10 +4,13 @@
 		display: flex;
 		justify-content: center;
 
-		margin-bottom: rem(75);
 
 		font-size: rem(20);
 		font-weight: 500;
+
+				// margin-bottom: rem(75);
+
+		@include adaptiveValue("margin-bottom", 75, 29, 0, $pc, $mobile);
 	}
 
 	&__container {

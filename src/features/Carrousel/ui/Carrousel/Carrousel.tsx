@@ -89,25 +89,25 @@ export const Carrousel: FC<CarrouselProps> = memo(({
 	}, [currentIndexItem, maxIndexItem, onClickDotHandler]);
 
 	const ArrowButtonLeft = useMemo(() => {
-		if (!isShowLeftButton) {
-			return null;
+		if (isShowLeftButton) {
+			return <Button className={cls.Carrousel__buttonLeft} onClick={onClickHandlerLeft} />;
 		}
 
-		return <Button className={cls.Carrousel__buttonLeft} onClick={onClickHandlerLeft} />;
+		return null;
 	}, [isShowLeftButton, onClickHandlerLeft]);
 
 	const ArrowButtonRight = useMemo(() => {
-		if (!isShowRightButton) {
-			return null;
+		if (isShowRightButton) {
+			return (
+				<Button
+					className={cls.Carrousel__buttonRight}
+					onClick={onClickHandlerRight}
+					right
+				/>
+			);
 		}
 
-		return (
-			<Button
-				className={cls.Carrousel__buttonRight}
-				onClick={onClickHandlerRight}
-				right
-			/>
-		);
+		return null;
 	}, [isShowRightButton, onClickHandlerRight]);
 
 	const carrouselItems = useMemo(() => {
